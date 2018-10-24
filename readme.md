@@ -1,3 +1,18 @@
+## site_visitka
+сайт предназначен для ознакомления с услугами студии MadLocks
+## используемые_технологии
+-Apache for php 7.2
+-PHP 7.2
+-MySQL 5.7
+-Laravel 5.7
+-Bootstrap
+-jQvery
+## informatiya po ystanovke
+ 
+
+
+
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
