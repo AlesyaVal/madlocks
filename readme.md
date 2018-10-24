@@ -1,15 +1,20 @@
 ## site_visitka
 сайт предназначен для ознакомления с услугами студии MadLocks
 ## используемые_технологии
--Apache for php 7.2
--PHP 7.2
--MySQL 5.7
--Laravel 5.7
--Bootstrap
--jQvery
+ -Apache for php 7.2 
+ -PHP 7.2 
+ -MySQL 5.7 
+ -Laravel 5.7 
+ -Bootstrap 
+ -jQvery 
 ## informatiya po ystanovke
- 
-
+ -cd/domains 
+ -git clone https://github.com/AlesyaVal/madlocks.git 
+ -composer self-upgrate 
+ -composer install 
+ -create .env from .env.example 
+ -перезапустить сервер  
+ -http://madlocks 
 
 
 
