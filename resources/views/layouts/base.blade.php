@@ -9,9 +9,11 @@
    <link  type="text/css" rel="stylesheet" href="{{asset('/public/media/bootstrap/css/bootstrap.min.css')}}"/>
    <link  type="text/css" rel="stylesheet" href="{{asset('/public/media/css/style.css')}}"/>
  
-
+	@section ('styles')
+	@show
  
-   
+	@section ('scripts')
+	@show
    </head>
    	<body>
    		<header id="header">
@@ -54,9 +56,9 @@
    		  <aside class="col-md-2">
    		  <a href="{{asset('photo')}}" class="btn btn-default btn-block">Галерея</a> 
    		  <a href="{{asset('price')}}" class="btn btn-default btn-block">Прайс-лист</a>   
-   		  <a href="{{asset('#')}}" class="btn btn-default btn-block">Отзывы</a> 			
+   		  <a href="{{asset('feedback')}}" class="btn btn-default btn-block">Отзывы</a> 			
 		  </aside>
-   		<article class="col-md-8 mainblock vji"> 
+   		<article class="col-md-8 mainblock"> 
 		@yield('content')
 		</article>
 
