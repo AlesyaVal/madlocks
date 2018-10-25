@@ -5,7 +5,7 @@
 			@foreach($feeds as $one)
 			<div class='room'>
 			{!!$one->body!!}
-			<div class='time'>{{$one->created_of}}
+			<div class='time bd-primary'>{{$one->created_at}}
 			</div>
 			
 			

@@ -15,6 +15,9 @@
  -create .env from .env.example 
  -перезапустить сервер  
  -http://madlocks 
+ -создать базу с именем проекта(MadLocks)
+ -выполнить миграцию(php artisan migrate)  либо export base.sql
+ -
 
 
 добавлена новая ветка user 
