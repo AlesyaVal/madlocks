@@ -43,26 +43,14 @@
 		</header>
 		
 		
-   		<nav class="topmenu">
-   		<a href="{{asset('/')}}">Главная</a>
-   		<a href="{{asset('HAirMaster')}}">Наши мастера</a>
-   		<a href="{{asset('services')}}">Услуги</a>
-   		<a href="{{asset('map')}}">Карта проезда</a>
-   		<a href="{{asset('contacts')}}">Контакты</a>
-	
-   		</nav>
+   	@include('templates.topmenu')
    		<main>
    		
    		  <aside class="col-md-2">
-			<a href="{{asset('photo')}}" class="btn btn-warning btn-block">Галерея</a> 
-			<a href="{{asset('price')}}" class="btn btn-warning btn-block">Прайс-лист</a>
-			<a href="{{asset('feedback')}}" class="btn btn-warning btn-block">Отзывы</a> 		
-		  @if($url == '/services') 
-			@foreach ($v_catalogs as $one)
-				<a href="{{asset('catalog/'.$one->id)}}" class="btn btn-default btn-block">{{$one->name}}</a>
-			@endforeach 
-		  @endif
-   			
+		
+   		<a href="{{asset('photo')}}" class="btn btn-warning btn-block">Галерея</a> 
+   		<a href="{{asset('price')}}" class="btn btn-warning btn-block">Прайс-лист</a>
+   		<a href="{{asset('feedback')}}" class="btn btn-warning btn-block">Отзывы</a> 			
 		  </aside>
    		<article class="col-md-8 mainblock"> 
 		@yield('content')

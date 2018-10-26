@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3307
--- Время создания: Окт 25 2018 г., 16:33
+-- Время создания: Окт 26 2018 г., 17:24
 -- Версия сервера: 5.7.20
 -- Версия PHP: 7.2.0
 
@@ -21,6 +21,34 @@ SET time_zone = "+00:00";
 --
 -- База данных: `madlocks`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `catalogs`
+--
+
+CREATE TABLE `catalogs` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `picture` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `parent_id` int(11) NOT NULL,
+  `vip` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `catalogs`
+--
+
+INSERT INTO `catalogs` (`id`, `name`, `body`, `picture`, `parent_id`, `vip`, `user_id`, `created_at`, `updated_at`) VALUES
+(3, 'Плетения', '', '', 0, 0, 0, NULL, NULL),
+(4, 'Сложные окрашивания', '', '', 0, 0, 0, NULL, NULL),
+(5, 'Стрижки', '', '', 0, 0, 0, NULL, NULL),
+(6, 'Разглаживание волос', '', '', 0, 0, 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -94,7 +122,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2018_10_25_121723_create_maintexts_table', 2),
-(4, '2018_10_25_145114_create_feedback_table', 3);
+(4, '2018_10_25_145114_create_feedback_table', 3),
+(5, '2018_10_26_154552_create_catalogs_table', 4);
 
 -- --------------------------------------------------------
 
@@ -137,6 +166,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 --
 
 --
+-- Индексы таблицы `catalogs`
+--
+ALTER TABLE `catalogs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `feedback`
 --
 ALTER TABLE `feedback`
@@ -172,6 +207,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT для таблицы `catalogs`
+--
+ALTER TABLE `catalogs`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT для таблицы `feedback`
 --
 ALTER TABLE `feedback`
@@ -187,7 +228,7 @@ ALTER TABLE `maintexts`
 -- AUTO_INCREMENT для таблицы `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `users`

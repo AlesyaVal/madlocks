@@ -1,7 +1,8 @@
-   	@extends('layouts.base')
+   	@extends('layouts.main')
 	@section('content')
 			<h2>Добро пожаловать на наш сайт</h2>
-   			<div class="maintext"></div>
+   			<div class="maintext">
+			<div class="maintext"></div>
    			<p class="lead">
    		
 			<p style="margin-left: 40px;"><em>AFROMARI -
@@ -65,4 +66,6 @@
     <div class="cont"><div class="node node490 widget widget-text"><div class="wrapper1"><div class="wrapper2"><div class=""><div class="textable"><p style="line-height: 1.5;">Есть два варианта:</p><p style="line-height: 1.5;"><br>1️.Вы приезжаете к нам в студию и снимаем вам Косички, просто расплетая их, а дальше уже даем ЦУ<br>Процесс это не быстрый, занимает примерно столько же времени сколько и плетение, поэтому и цена соответствующая&nbsp;</p><p style="line-height: 1.5;"><br>2.Вы сами садитесь одна, либо с подружками и расплетаете чудесные Косички.Расплетаются они очень легко, если это Зизи, то узелок развязывается, либо срезается и дальше как простая косичка все расплетается, если это афро с канекалоном, то тут вы отстригаете косу до ваших волос и тоже дальше расплетаете Косички .</p></div></div></div></div></div></div>
   </div>
 </div></div></div></div></div></div></div></div><span class="plplink"></span></div></div>
+			</div>
+   			
 @endsection
