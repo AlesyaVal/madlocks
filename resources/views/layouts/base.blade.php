@@ -6,13 +6,14 @@
    <meta name="keywords" content="выражения через ,">
    <meta name="author" content="">
    <title> название сайта </title>
-   <link  type="text/css" rel="stylesheet" href="{{asset('/public/media/bootstrap/css/bootstrap.min.css')}}"/>
+  <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
    <link  type="text/css" rel="stylesheet" href="{{asset('/public/media/css/style.css')}}"/>
  
 	@section ('styles')
 	@show
  
 	@section ('scripts')
+	<script src="{{ asset('public/js/app.js') }}" defer></script>
 	@show
    </head>
    	<body>
@@ -44,24 +45,28 @@
 		
 		
    		<nav class="topmenu">
-   		<a href="{{asset('/')}}">Главная</a>
-   		<a href="{{asset('HAirMaster')}}">Наши мастера</a>
-   		<a href="{{asset('services')}}">Услуги</a>
-   		<a href="{{asset('map')}}">Карта проезда</a>
-   		<a href="{{asset('contacts')}}">Контакты</a>
-	
-   		</nav>
+
+		<a href="{{asset('/')}}">Главная</a>
+   	 	<a href="{{asset('HAirMaster')}}">Наши мастера</a>
+				<a class="btn btn-secondary dropdown-toggle " href="{{asset('categories')}}" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Услуги</a>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+					@foreach ($v_catalogs as $one)
+				<a href="{{asset('catalog/'.$one->id)}}" class="btn btn-default btn-block">{{$one->name}}</a>
+			@endforeach 
+			</div>
+			
+		<a href="{{asset('map')}}">Карта проезда</a>
+   	 	<a href="{{asset('contacts')}}">Контакты</a>
+	   	</nav>
    		<main>
    		
    		  <aside class="col-md-2">
 			<a href="{{asset('photo')}}" class="btn btn-warning btn-block">Галерея</a> 
 			<a href="{{asset('price')}}" class="btn btn-warning btn-block">Прайс-лист</a>
 			<a href="{{asset('feedback')}}" class="btn btn-warning btn-block">Отзывы</a> 		
-		  @if($url == '/services') 
-			@foreach ($v_catalogs as $one)
-				<a href="{{asset('catalog/'.$one->id)}}" class="btn btn-default btn-block">{{$one->name}}</a>
-			@endforeach 
-		  @endif
+		 
+		
    			
 		  </aside>
    		<article class="col-md-8 mainblock"> 

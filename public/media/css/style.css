@@ -2,6 +2,7 @@
 body {
 	margin: 0;
 	padding: 0;
+	font-family: sans-serif;
 }
 #header {
 	height: 240px;
@@ -22,10 +23,14 @@ body {
 	color: white;
 
 }
+
+
+
 .topmenu{
 	display: flex;
 	width: 100%;
 	margin: 0 auto;
+	
 }
 .topmenu a{
 	flex: 1;
@@ -35,17 +40,22 @@ body {
 	text-align: center;
 	padding: 20px 0;
 	border-right: solid 1px white;
+	
+	
 }
 .topmenu a:hover{
 	background: purple;
 	color: black;
 }
+
 .mainblock{
 	position: relative;
 	z-index:2;
 	background: rgba(255,255,255, 0.7);
 }
-
+/*.dropdown-toggle{
+	
+}*/
 .footer {
 	text-align:center;
 	padding-top: 50px;
@@ -58,6 +68,10 @@ body {
 	z-index:10;
 	background: rgba(133,133,133, 0.7);
 }
+.product {
+	float:left;
+	margin-right:10 px;
+}
 
 video{
    position:fixed;
@@ -68,7 +82,9 @@ video{
    top:0;
    left:0;
 }
- 
+ /**/
+
+/**/
 @media screen and (max-width: 850px){
 	#header{
 		height: 100px;
