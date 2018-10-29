@@ -44,11 +44,12 @@
 		</header>
 		
 		
-   		<nav class="topmenu">
+   		
+		<nav class="topmenu">
 
 		<a href="{{asset('/')}}">Главная</a>
    	 	<a href="{{asset('HAirMaster')}}">Наши мастера</a>
-				<a class="btn btn-secondary dropdown-toggle " href="{{asset('categories')}}" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<a class="btn btn-secondary dropdown-toggle " href="{{asset('categories')}}" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				Услуги</a>
 			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 					@foreach ($v_catalogs as $one)
@@ -59,35 +60,29 @@
 		<a href="{{asset('map')}}">Карта проезда</a>
    	 	<a href="{{asset('contacts')}}">Контакты</a>
 	   	</nav>
-   		<main>
-   		
+   		<main class="row">
    		  <aside class="col-md-2">
 			<a href="{{asset('photo')}}" class="btn btn-warning btn-block">Галерея</a> 
 			<a href="{{asset('price')}}" class="btn btn-warning btn-block">Прайс-лист</a>
 			<a href="{{asset('feedback')}}" class="btn btn-warning btn-block">Отзывы</a> 		
-		 
-		
-   			
 		  </aside>
-   		<article class="col-md-8 mainblock"> 
-		@yield('content')
-		</article>
+		 
+			<article class="col-md-8 mainblock"> 
+			@yield('content')
+			</article>
 
-            </p>
-			
-
-   			</p>
-   		 </main>
-   		<aside class="col-md-2"> 
+         
+			<aside class="col-md-2"> 
         
-        <aside id="dev_widget_preview" class="dev_widget_preview" style="width: 300px; height: 280px; background: none;">
-		<iframe name="fXDc71ab" frameborder="0" 
-		src=  https://vk.com/widget_community.php?app=1936057&amp;width=200px&amp;_ver=1&amp;gid=34188066&amp;mode=3&amp;color1=&amp;color2=&amp;color3=&amp;class_name=&amp;url=https%3A%2F%2Fvk.com%2Fdev%2FCommunity%3Fheight%3D400%26link%3Dhttps%253A%252F%252Fvk.com%252Fcreative_studio_jh%26mode%3D3%26no_cover%3D%26oid%3D-34188066%26wide%3D&amp;referrer=https%3A%2F%2Fwww.kasper.by%2F&amp;title=%D0%92%D0%B8%D0%B4%D0%B6%D0%B5%D1%82%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%20%7C%20%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D0%B0%D0%BC&amp;166a2723370
-		width="200" height="185" scrolling="no" id="vkwidget16" style="overflow: hidden; height: 190px;">
-		</iframe>
-		</aside>
-
-   		</aside>
+			<aside id="dev_widget_preview" class="dev_widget_preview" style="width: 300px; height: 280px; background: none;">
+			<iframe name="fXDc71ab" frameborder="0" 
+			src=  https://vk.com/widget_community.php?app=1936057&amp;width=200px&amp;_ver=1&amp;gid=34188066&amp;mode=3&amp;color1=&amp;color2=&amp;color3=&amp;class_name=&amp;url=https%3A%2F%2Fvk.com%2Fdev%2FCommunity%3Fheight%3D400%26link%3Dhttps%253A%252F%252Fvk.com%252Fcreative_studio_jh%26mode%3D3%26no_cover%3D%26oid%3D-34188066%26wide%3D&amp;referrer=https%3A%2F%2Fwww.kasper.by%2F&amp;title=%D0%92%D0%B8%D0%B4%D0%B6%D0%B5%D1%82%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%20%7C%20%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D0%B0%D0%BC&amp;166a2723370
+			width="200" height="185" scrolling="no" id="vkwidget16" style="overflow: hidden; height: 190px;">
+			</iframe>
+			</aside>
+			</aside>
+		</main>
+		
    		<br style="clear:both" />
    		<footer class="footer">
    			2018 &copy; AlesyaValko
