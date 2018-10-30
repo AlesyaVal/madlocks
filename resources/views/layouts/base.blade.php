@@ -30,8 +30,7 @@
                      <a href="{{asset('home')}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }} <span class="caret"></span>
                      </a>
-						<div >
-                         <a class="dropdown-item" href="{{ route('logout') }}"
+                         <a  href="{{ route('logout') }}"
                           onclick="event.preventDefault();
                           document.getElementById('logout-form').submit();">
                          {{ __('Logout') }}
@@ -39,7 +38,6 @@
 		<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                               @csrf
           </form>
-                        </div>
                             @endguest
 		</header>
 		
@@ -49,7 +47,8 @@
 
 		<a href="{{asset('/')}}">Главная</a>
    	 	<a href="{{asset('HAirMaster')}}">Наши мастера</a>
-		<a class="btn btn-secondary dropdown-toggle " href="{{asset('categories')}}" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<a class="btn btn-secondary dropdown-toggle " href="{{asset('categories')}}" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" 
+		a href="{{asset('services')}}">
 				Услуги</a>
 			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 					@foreach ($v_catalogs as $one)
@@ -57,14 +56,15 @@
 			@endforeach 
 			</div>
 			
-		<a href="{{asset('map')}}">Карта проезда</a>
-   	 	<a href="{{asset('contacts')}}">Контакты</a>
+		<a href="{{asset('map')}}" >Карта проезда</a>
+   	 	<a href="{{asset('contacts')}}" >Контакты</a>
 	   	</nav>
    		<main class="row">
    		  <aside class="col-md-2">
-			<a href="{{asset('photo')}}" class="btn btn-warning btn-block">Галерея</a> 
-			<a href="{{asset('price')}}" class="btn btn-warning btn-block">Прайс-лист</a>
-			<a href="{{asset('feedback')}}" class="btn btn-warning btn-block">Отзывы</a> 		
+			<a href="{{asset('photo')}}" class="btn btn-secondary btn-block">Галерея</a> 
+			<a href="{{asset('price')}}" class="btn btn-secondary btn-block">Прайс-лист</a>
+			<a href="{{asset('feedback')}}" class="btn btn-secondary btn-block">Отзывы</a>
+			<a href="{{asset('basket')}}" class="btn btn-secondary btn-block">Мне понравилось ({{$cookie_count}})</a>
 		  </aside>
 		 
 			<article class="col-md-8 mainblock"> 

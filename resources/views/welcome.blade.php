@@ -1,4 +1,4 @@
-   	@extends('layouts.main')
+   	@extends('layouts.base')
 	@section('content')
 			<h2>Добро пожаловать на наш сайт</h2>
    			<div class="maintext">

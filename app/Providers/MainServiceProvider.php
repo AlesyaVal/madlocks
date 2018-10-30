@@ -17,6 +17,7 @@ class MainServiceProvider extends ServiceProvider
     public function boot()
     {
 	View::composer('*', 'App\Providers\ViewComposers\SizeComposer');
+	View::composer('*', 'App\Providers\ViewComposers\CookieComposer');
     }
 
     /**
@@ -28,4 +29,6 @@ class MainServiceProvider extends ServiceProvider
     {
         //
     }
+
+
 }
