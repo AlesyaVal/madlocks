@@ -13,6 +13,7 @@
 	@show
  
 	@section ('scripts')
+	<script src="{{ asset('public/js/app.js?time='.time()) }}"></script>
 	@show
    </head>
    	<body>
@@ -29,8 +30,8 @@
                      <a href="{{asset('home')}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }} <span class="caret"></span>
                      </a>
-						<div >
-                         <a class="dropdown-item" href="{{ route('logout') }}"
+						<div>
+                         <a  href="{{ route('logout') }}"
                           onclick="event.preventDefault();
                           document.getElementById('logout-form').submit();">
                          {{ __('Logout') }}
@@ -44,23 +45,20 @@
 		
 		
    	@include('templates.topmenu')
-   		<main>
-   		
-   		  <aside class="col-md-2">
-		
-   		<a href="{{asset('photo')}}" class="btn btn-warning btn-block">Галерея</a> 
-   		<a href="{{asset('price')}}" class="btn btn-warning btn-block">Прайс-лист</a>
-   		<a href="{{asset('feedback')}}" class="btn btn-warning btn-block">Отзывы</a> 			
+   		<main class="row">
+   		<aside class="col-md-2">
+			<a href="{{asset('photo')}}" class="btn btn-secondary btn-block">Галерея</a> 
+			<a href="{{asset('price')}}" class="btn btn-secondary btn-block">Прайс-лист</a>
+			<a href="{{asset('feedback')}}" class="btn btn-secondary btn-block">Отзывы</a>
+			<a href="{{asset('basket')}}" class="btn btn-secondary btn-block">Мне понравилось ({{$cookie_count}})</a>
+		  
 		  </aside>
    		<article class="col-md-8 mainblock"> 
+		
 		@yield('content')
 		</article>
-
-            </p>
-			
-
-   			</p>
-   		 </main>
+           
+   		
    		<aside class="col-md-2"> 
         
         <aside id="dev_widget_preview" class="dev_widget_preview" style="width: 300px; height: 280px; background: none;">
@@ -71,6 +69,7 @@
 		</aside>
 
    		</aside>
+		</main>
    		<br style="clear:both" />
    		<footer class="footer">
    			2018 &copy; AlesyaValko

@@ -66,6 +66,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+								<a class="nav-link" href="http://localhost/login" class="btn btn-secondary "> Login</a>
                             </div>
                         </div>
                     </form>

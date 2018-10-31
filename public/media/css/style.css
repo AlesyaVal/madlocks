@@ -24,6 +24,11 @@ body {
 	color: white;
 
 }
+.nav-link{
+	font-size: 20px;
+	float: left;
+	color: #565656;
+}
 
 .dropdown-menu{
 	background: rgba(0,0,0, 0.3);

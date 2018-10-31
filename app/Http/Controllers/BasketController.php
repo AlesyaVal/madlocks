@@ -40,4 +40,10 @@ setcookie($id,'',time()-1,'/');
 }
 		
 }return redirect()->back();}
+
+    public function index()
+    {
+        return view('zayavka');
+    }
+	
 }
