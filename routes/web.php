@@ -21,5 +21,6 @@ Route::get('basket/dell/{id}', 'BasketController@getDell');
 Route::get('basket/clear', 'BasketController@getClear');
 Route::get('zayavka', 'BasketController@index');
 Route::post('order', 'ZayavkaController@postZayavka');
+Route::get('admin/zayavka/one/{id}', 'Admin\ZayavkaController@getIndex');
 
 Route::get('{url}', 'staticController@getIndex'); //всегда последний

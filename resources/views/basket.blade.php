@@ -7,6 +7,9 @@
 	@section('content')
 	<h2>Мне нравится</h2>
    		<div class="maintext">
+		
+		
+		
 		<form method="get" action="{{asset('zayavka')}}">
 		@csrf
 		<table class="table table-borderd table-striped" width=100%>
@@ -40,7 +43,9 @@ $itog=0;
 				@endif</td>
 				<td>{{$products[$key]->name}}</td>
 				
-				<td> <span id="price_{{$key}}">{{$products[$key]->price}}</span> </td>
+				<td> 
+
+				<span id="price_{{$key}}">{{$products[$key]->price}}</span> </td>
 				
 				<td><input type="number" name="{{$key}}" data-id="{{$key}}" min="0" max="20" value="{{$value}}" class="count" /></td>
 				<td><span id="count_{{$key}}">{{$count}}</span></td>
