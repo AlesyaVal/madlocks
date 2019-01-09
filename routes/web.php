@@ -3,7 +3,7 @@
 
 Route::get('/', 'BaseController@getIndex'); 
     
-
+Route::post('ajax', 'AjaxController@postIndex');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -22,5 +22,6 @@ Route::get('basket/clear', 'BasketController@getClear');
 Route::get('zayavka', 'BasketController@index');
 Route::post('order', 'ZayavkaController@postZayavka');
 Route::get('admin/zayavka/one/{id}', 'Admin\ZayavkaController@getIndex');
+
 
 Route::get('{url}', 'staticController@getIndex'); //всегда последний

@@ -1,4 +1,8 @@
    	@extends('layouts.base')
+   	@section('scripts')
+   	  @parent
+  <script src= "{{asset('public/media/js/modal.js')}}"></script>
+  @endsection
 	@section('content')
 			<h2>Мы можем вам предложить!</h2>
    			<div class="maintext">
@@ -10,9 +14,9 @@
 				@foreach ($cat->products()->get() as $one)
 				</hr>
 				@If ($one->picture)
-					<img src="{{asset('public/uploads/thumb/'. $one->picture)}}"/>
+					<img class='product' src="{{asset('public/uploads/thumb/'. $one->picture)}}" id="{{$one->id}}"/>
 				@else
-					<img class='pruduct' src="{{asset('madia/img/nophoto.jpg')}}"/>
+					<img class='product' src="{{asset('madia/img/nophoto.jpg')}}"  id="{{$one->id}}"/>
 				@endif
 			<h3>
 	<a href="{{asset('product/'.$one->id)}}"	class='product_link'>

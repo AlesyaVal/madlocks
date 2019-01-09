@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3307
--- Время создания: Окт 27 2018 г., 14:44
+-- Время создания: Ноя 01 2018 г., 14:28
 -- Версия сервера: 5.7.20
 -- Версия PHP: 7.2.0
 
@@ -158,7 +158,8 @@ INSERT INTO `menus` (`id`, `position`, `menu_type`, `icon`, `name`, `title`, `pa
 (1, NULL, 0, NULL, 'User', 'User', NULL, NULL, NULL),
 (2, NULL, 0, NULL, 'Role', 'Role', NULL, NULL, NULL),
 (3, 0, 1, 'fa-database', 'Category', 'Categories', NULL, '2018-10-27 06:02:38', '2018-10-27 06:02:38'),
-(4, 0, 1, 'fa-database', 'Product', 'Products', NULL, '2018-10-27 06:18:31', '2018-10-27 06:18:31');
+(4, 0, 1, 'fa-database', 'Product', 'Products', NULL, '2018-10-27 06:18:31', '2018-10-27 06:18:31'),
+(5, 0, 3, 'fa-database', 'Zayavka', 'zayavkas', NULL, '2018-11-01 08:57:24', '2018-11-01 08:57:24');
 
 -- --------------------------------------------------------
 
@@ -177,7 +178,8 @@ CREATE TABLE `menu_role` (
 
 INSERT INTO `menu_role` (`menu_id`, `role_id`) VALUES
 (3, 1),
-(4, 1);
+(4, 1),
+(5, 1);
 
 -- --------------------------------------------------------
 
@@ -207,7 +209,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (9, '2015_12_11_000000_create_users_logs_table', 5),
 (10, '2016_03_14_000000_update_menus_table', 5),
 (11, '2018_10_27_090238_create_category_table', 6),
-(12, '2018_10_27_091831_create_product_table', 7);
+(12, '2018_10_27_091831_create_product_table', 7),
+(13, '2018_10_31_155715_create_zayavkas_table', 8);
 
 -- --------------------------------------------------------
 
@@ -231,7 +234,7 @@ CREATE TABLE `product` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `body` text COLLATE utf8mb4_unicode_ci,
-  `price` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `price` int(255) DEFAULT NULL,
   `picture` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `category_id` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -244,14 +247,14 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `body`, `price`, `picture`, `category_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Де- дреды', '<p>описание Де- дреды</p>', '300 р.', '1540629318-AEgVeinXHZQ.jpg', 3, '2018-10-27 06:21:17', '2018-10-27 08:35:19', NULL),
-(2, 'Се-Дреды', '<p>описание Се-Дреды</p>', '300 р.', '1540629327-BxlEA4cOlkA.jpg', 3, '2018-10-27 06:22:12', '2018-10-27 08:35:27', NULL),
-(3, 'Брейды', '<p>описание Брейды</p>', '280 р.', '1540629333-брейды.jpg', 1, '2018-10-27 06:23:04', '2018-10-27 08:35:34', NULL),
-(4, 'Косички зизи', '<p>описание косички зизи</p>', '320 р.', '1540629344-афро.jpg', 1, '2018-10-27 06:25:12', '2018-10-27 08:35:45', NULL),
-(5, 'pulpriot', '<p>описание pulpriot</p>', '250 р.', '1540629355-цвет.jpg', 6, '2018-10-27 06:28:38', '2018-10-27 08:35:55', NULL),
-(6, 'Aloxxi', '<p>описание</p>', '230 р.', '1540629363-Aloxxi.jpg', 6, '2018-10-27 06:38:11', '2018-10-27 08:36:04', NULL),
-(7, 'стрижка', '<p>описание техники</p>', '40 р.', '1540629371-женстр.jpg', 4, '2018-10-27 06:40:04', '2018-10-27 08:36:12', NULL),
-(8, 'стрижка', '<p>описание техники</p>', '30 р.', '1540629380-мужстр.jpg', 7, '2018-10-27 06:42:06', '2018-10-27 08:36:20', NULL);
+(1, 'Де- дреды', '<p>описание Де- дреды</p>', 300, '1540629318-AEgVeinXHZQ.jpg', 3, '2018-10-27 06:21:17', '2018-10-27 08:35:19', NULL),
+(2, 'Се-Дреды', '<p>описание Се-Дреды</p>', 300, '1540629327-BxlEA4cOlkA.jpg', 3, '2018-10-27 06:22:12', '2018-10-27 08:35:27', NULL),
+(3, 'Брейды', '<p>описание Брейды</p>', 280, '1540629333-брейды.jpg', 1, '2018-10-27 06:23:04', '2018-10-27 08:35:34', NULL),
+(4, 'Косички зизи', '<p>описание косички зизи</p>', 320, '1540629344-афро.jpg', 1, '2018-10-27 06:25:12', '2018-10-27 08:35:45', NULL),
+(5, 'pulpriot', '<p>описание pulpriot</p>', 250, '1540629355-цвет.jpg', 6, '2018-10-27 06:28:38', '2018-10-27 08:35:55', NULL),
+(6, 'Aloxxi', '<p>описание</p>', 230, '1540629363-Aloxxi.jpg', 6, '2018-10-27 06:38:11', '2018-10-27 08:36:04', NULL),
+(7, 'стрижка', '<p>описание техники</p>', 40, '1540629371-женстр.jpg', 4, '2018-10-27 06:40:04', '2018-10-27 08:36:12', NULL),
+(8, 'стрижка', '<p>описание техники</p>', 30, '1540629380-мужстр.jpg', 7, '2018-10-27 06:42:06', '2018-10-27 08:36:20', NULL);
 
 -- --------------------------------------------------------
 
@@ -297,8 +300,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, NULL, 'Alesya', 'Alesyavalko@mail.ru', NULL, '$2y$10$7hLwGDoONjiD1JkmFpkZ6uQBTo9NLkXgEKT5wnG0aA9QiEflaPAX2', '6xJwVfVqspC1hQhjH4otl8GAvfXQ5WMN2ORUPgBAsXJpN5aiyRPW2nneMKXn', '2018-10-25 07:43:05', '2018-10-25 07:43:05'),
-(2, 1, 'Alesya', 'ValkoOlesia@gmail.com', NULL, '$2y$10$QGroiHrrlIKebiiWsy3RQezgYFK4yFypvQ3xtKmiMzn0RverHO1j6', 'kQb7icSZDxcwvhG2yY1LOri2jftohUDStD7xrp7ep6HSbTiDDNR2xzXXkmq7', '2018-10-27 05:47:41', '2018-10-27 05:47:41');
+(1, 1, 'Alesya', 'Alesyavalko@mail.ru', NULL, '$2y$10$7hLwGDoONjiD1JkmFpkZ6uQBTo9NLkXgEKT5wnG0aA9QiEflaPAX2', '6hmcz1O7APtwQKmVWOo3BPXowsHCMKb9Y4TaktRditZeGV35514enRdiYIXy', '2018-10-25 07:43:05', '2018-10-25 07:43:05'),
+(2, 1, 'AlesyaValko', 'ValkoOlesia@gmail.com', NULL, '$2y$10$QGroiHrrlIKebiiWsy3RQezgYFK4yFypvQ3xtKmiMzn0RverHO1j6', 'CQ2sHagOZM6PQtnQ2AsK4f41MXK9VDGYjKkKLHp29QUs1rpp7AKnLNVnS2M1', '2018-10-27 05:47:41', '2018-10-27 05:47:41');
 
 -- --------------------------------------------------------
 
@@ -361,7 +364,70 @@ INSERT INTO `users_logs` (`id`, `user_id`, `action`, `action_model`, `action_id`
 (38, 2, 'updated', 'product', 8, '2018-10-27 08:36:20', '2018-10-27 08:36:20'),
 (39, 2, 'updated', 'users', 2, '2018-10-27 10:35:17', '2018-10-27 10:35:17'),
 (40, 2, 'updated', 'users', 2, '2018-10-27 10:44:41', '2018-10-27 10:44:41'),
-(41, 2, 'updated', 'users', 2, '2018-10-27 10:55:35', '2018-10-27 10:55:35');
+(41, 2, 'updated', 'users', 2, '2018-10-27 10:55:35', '2018-10-27 10:55:35'),
+(42, 1, 'updated', 'users', 1, '2018-10-30 13:31:25', '2018-10-30 13:31:25'),
+(43, 1, 'updated', 'users', 1, '2018-10-30 13:56:17', '2018-10-30 13:56:17'),
+(44, 1, 'updated', 'users', 1, '2018-10-30 14:13:45', '2018-10-30 14:13:45'),
+(45, 1, 'updated', 'users', 1, '2018-10-30 14:14:16', '2018-10-30 14:14:16'),
+(46, 1, 'updated', 'users', 1, '2018-10-30 14:22:28', '2018-10-30 14:22:28'),
+(47, 1, 'updated', 'users', 1, '2018-10-30 15:10:03', '2018-10-30 15:10:03'),
+(48, 1, 'updated', 'users', 1, '2018-10-30 15:23:09', '2018-10-30 15:23:09'),
+(49, 1, 'updated', 'users', 1, '2018-10-31 09:51:29', '2018-10-31 09:51:29'),
+(50, 1, 'updated', 'users', 1, '2018-10-31 10:33:39', '2018-10-31 10:33:39'),
+(51, 1, 'updated', 'users', 1, '2018-10-31 12:27:11', '2018-10-31 12:27:11'),
+(52, 1, 'updated', 'users', 1, '2018-10-31 12:35:47', '2018-10-31 12:35:47'),
+(53, 1, 'updated', 'users', 1, '2018-10-31 12:43:35', '2018-10-31 12:43:35'),
+(54, 1, 'updated', 'users', 1, '2018-10-31 12:45:10', '2018-10-31 12:45:10'),
+(55, 1, 'updated', 'users', 1, '2018-10-31 12:46:05', '2018-10-31 12:46:05'),
+(56, 1, 'updated', 'users', 1, '2018-10-31 12:46:37', '2018-10-31 12:46:37'),
+(57, 1, 'updated', 'users', 1, '2018-10-31 12:47:13', '2018-10-31 12:47:13'),
+(58, 1, 'updated', 'users', 1, '2018-10-31 12:48:48', '2018-10-31 12:48:48'),
+(59, 2, 'updated', 'users', 2, '2018-11-01 10:59:33', '2018-11-01 10:59:33');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `zayavkas`
+--
+
+CREATE TABLE `zayavkas` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `body` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `comment` text COLLATE utf8mb4_unicode_ci,
+  `user_id` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `zayavkas`
+--
+
+INSERT INTO `zayavkas` (`id`, `body`, `name`, `phone`, `email`, `comment`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 'a:0:{}', 'Olesia', '293291361', 'ValkoOlesia@gmail.ru', NULL, 0, '2018-11-01 07:19:28', '2018-11-01 07:19:28'),
+(2, 'a:0:{}', 'Olesia', '293291361', 'ValkoOlesia@gmail.ru', NULL, 0, '2018-11-01 08:00:41', '2018-11-01 08:00:41'),
+(3, 'a:0:{}', 'Olesia', '293291361', 'ValkoOlesia@gmail.ru', NULL, 0, '2018-11-01 08:17:25', '2018-11-01 08:17:25'),
+(4, 'a:0:{}', 'Olesia', '293291361', 'ValkoOlesia@gmail.ru', NULL, 0, '2018-11-01 08:18:15', '2018-11-01 08:18:15'),
+(5, 'a:0:{}', 'Olesia', '293291361', 'ValkoOlesia@gmail.ru', NULL, 0, '2018-11-01 08:19:41', '2018-11-01 08:19:41'),
+(6, 'a:0:{}', 'Alesya', '293291361', 'AlesyaValko@mail.ru', NULL, 0, '2018-11-01 08:27:08', '2018-11-01 08:27:08'),
+(7, 'a:0:{}', 'Alesya', '293291361', 'AlesyaValko@mail.ru', NULL, 0, '2018-11-01 08:27:29', '2018-11-01 08:27:29'),
+(8, 'a:0:{}', 'Alesya', '333846437', 'AlesyaValko@mail.ru', NULL, 0, '2018-11-01 08:32:32', '2018-11-01 08:32:32'),
+(9, 'a:0:{}', 'Alesya', '333846437', 'AlesyaValko@mail.ru', NULL, 0, '2018-11-01 08:37:05', '2018-11-01 08:37:05'),
+(10, 'a:0:{}', 'Alesya', '333846437', 'AlesyaValko@mail.ru', NULL, 0, '2018-11-01 08:40:09', '2018-11-01 08:40:09'),
+(11, 'a:0:{}', 'Alesya', '333846437', 'AlesyaValko@mail.ru', NULL, 0, '2018-11-01 08:40:34', '2018-11-01 08:40:34'),
+(12, 'a:0:{}', 'Alesya', '293291361', 'AlesyaValko@mail.ru', NULL, 0, '2018-11-01 08:41:47', '2018-11-01 08:41:47'),
+(13, 'a:0:{}', 'Alesya', '293291361', 'AlesyaValko@mail.ru', NULL, 0, '2018-11-01 08:53:24', '2018-11-01 08:53:24'),
+(14, 'a:0:{}', 'Alesya', '333846437', 'AlesyaValko@mail.ru', NULL, 2, '2018-11-01 10:01:04', '2018-11-01 10:01:04'),
+(15, 'a:0:{}', 'Olesia', '293291361', 'ValkoOlesia@gmail.ru', NULL, 2, '2018-11-01 10:05:56', '2018-11-01 10:05:56'),
+(16, 'a:2:{s:6:\"_token\";s:40:\"xkuILX4znsSF3XIQQJlplIeUb4ibaSuUtg1I9MQk\";i:3;s:1:\"1\";}', 'Olesia', '333846437', 'ValkoOlesia@gmail.ru', NULL, 2, '2018-11-01 10:18:10', '2018-11-01 10:18:10'),
+(17, 'a:2:{s:6:\"_token\";s:40:\"xkuILX4znsSF3XIQQJlplIeUb4ibaSuUtg1I9MQk\";i:3;s:1:\"1\";}', 'Olesia', '293291361', 'ValkoOlesia@gmail.ru', NULL, 2, '2018-11-01 10:21:53', '2018-11-01 10:21:53'),
+(18, 'a:2:{s:6:\"_token\";s:40:\"xkuILX4znsSF3XIQQJlplIeUb4ibaSuUtg1I9MQk\";i:3;s:1:\"1\";}', 'Olesia', '293291361', 'ValkoOlesia@gmail.ru', NULL, 2, '2018-11-01 10:22:40', '2018-11-01 10:22:40'),
+(19, 'a:1:{i:3;s:1:\"1\";}', 'Olesia', '293291361', 'ValkoOlesia@gmail.ru', NULL, 2, '2018-11-01 10:24:25', '2018-11-01 10:24:25'),
+(20, 'a:1:{i:3;s:1:\"1\";}', 'Alesya', '293291361', 'AlesyaValko@mail.ru', NULL, 1, '2018-11-01 11:00:15', '2018-11-01 11:00:15'),
+(21, 'a:1:{i:4;s:1:\"1\";}', 'Alesya', '333846437', 'AlesyaValko@mail.ru', NULL, 1, '2018-11-01 11:07:40', '2018-11-01 11:07:40');
 
 --
 -- Индексы сохранённых таблиц
@@ -444,6 +510,12 @@ ALTER TABLE `users_logs`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `zayavkas`
+--
+ALTER TABLE `zayavkas`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
@@ -475,13 +547,13 @@ ALTER TABLE `maintexts`
 -- AUTO_INCREMENT для таблицы `menus`
 --
 ALTER TABLE `menus`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT для таблицы `product`
@@ -505,7 +577,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `users_logs`
 --
 ALTER TABLE `users_logs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+
+--
+-- AUTO_INCREMENT для таблицы `zayavkas`
+--
+ALTER TABLE `zayavkas`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
