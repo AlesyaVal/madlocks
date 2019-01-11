@@ -311,7 +311,10 @@ html { height: 100%;}
  <li>
  <a href="{{asset('map')}}">Карта проезда</a>
  </li>
- <li class="dropdown">
+  <li>
+ <a href="{{asset('categories')}}">Галерея</a>
+ </li>
+   <li class="dropdown">
  <a href="{{asset('categories')}}" class="dropdown-toggle" data-toggle="dropdown">Услуги<span class="caret"></span></a>
  <ul class="dropdown-menu" role="menu">
   @foreach ($v_catalogs as $one)
@@ -319,6 +322,8 @@ html { height: 100%;}
       @endforeach  
  </ul>
  </li>
+ 
+ 
  <li>
  <a href="{{asset('feedback')}}" >Отзывы</a> 
  </li>

@@ -1,5 +1,8 @@
 @extends('admin.layouts.master')
-
+@section('scripts')
+      @parent
+  <script src= "{{asset('public/js/parse.js')}}"></script>
+  @endsection
 @section('content')
 
 <div class="row">
@@ -40,5 +43,15 @@
 </div>
 
 {!! Form::close() !!}
+
+<form>
+    <input type="text" id="purse_aliexpress" name="url from Aliexspress"  size="20" />
+    <input type="button" value="Parse from Aliexpress"  data-id='{{$category->name}}' class="parse"/>
+</form>
+<hr/>
+<div id="empty">
+    
+</div>
+
 
 @endsection
