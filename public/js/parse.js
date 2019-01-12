@@ -1,6 +1,6 @@
 $(function(){
 	$('.parse').click(function(){
-var url = $('#parse_aliexpress').val();
+var url = $('#purse_aliexpress').val();
 var id = $(this).attr('data-id');
  $.ajax({
   type: 'Get',
