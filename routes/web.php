@@ -13,7 +13,6 @@ Route::get('catalog/{id}','CatalogController@getIndex');
 Route::get('categories','ProductController@getAll');
 Route::group(['middleware'=>['authuser']], function (){
 	Route::get('basket', 'BasketController@getIndex');
-	Route::get('ajax/parse/catalog', 'Admin\AjaxParseController@getCatalog');
 });
 Route::get('product/{id}', 'ProductController@getOne');
 Route::get('basket/add/{id}', 'BasketController@getAdd');
