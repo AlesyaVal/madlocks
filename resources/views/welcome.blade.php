@@ -9,7 +9,7 @@
    <title> название сайта </title>
    <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
    
-   <link  type="text/css" rel="stylesheet" href="{{asset('/public/media/css/style.css')}}"/>
+<!--    <link  type="text/css" rel="stylesheet" href="{{asset('/public/media/css/style.css')}}"/> -->
     <link  type="text/css" rel="stylesheet" href="{{asset('/public/media/css/style1.css')}}"/>
 
    <link  type="text/css" rel="stylesheet" href="{{asset('madlocks/public/media/bootstrap/css/bootstrap.min.css')}}"/>
@@ -29,7 +29,7 @@
  <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
  <ul class="nav sidebar-nav">
  <li class="sidebar-brand">
- <a href="#"> Madlocks </a>
+ <a href="{{asset('/')}}"> Madlocks </a>
  </li>
  <li>
  <a href="{{asset('/')}}">Главная</a>
@@ -116,20 +116,21 @@ $(document).ready(function () {
   <script src="{{ asset('public/js/app.js?time='.time()) }}"></script>
   @show
    </head>
-
+<body>
     <header id="header" >
-     <!--   <h1 id="logotext" > MadLocks </h1>  -->
-      <img id="logo" src="{{asset('/public/media/img/Logotext.png')}}" style="width:100%; height: 120%;" />   
+       <h1 id="logotext" > MadLocks </h1> 
+     <!--  <img id="logo" src="{{asset('/public/media/img/Logotext.png')}}" style="width:100%; height: 120%;" /> -->   
     </header>
 
-<body>
-    <div>
+
+    <div class="video">
     <!-- <video autoplay loop muted="0"> -->
    <!-- <source src="{{asset('public/Video.mp4')}}" type="video/mp4"> -->
         <video src="{{asset('public/Video.mp4')}}" autoplay loop muted="0" width=100% height=100% ></video>
 <!-- </video> -->
 
     </div>
+
 </body>
 
 
@@ -144,12 +145,8 @@ $(document).ready(function () {
       
    <footer class="footer" >
 
-    <table class="table">
-   <tr>
-    <td width=25% > 2019  &copy;  MadLock</td>
-    <td width=50%> </td>
-    <td width=25%> <h6>Свяжитель с нами</h6>
-            <div class="textwidget">
+<div class="textwidget"> <h6>Свяжитель с нами</h6>
+            
 <p><a href="{{asset('map')}}"> г. Минск,ул. Короля, 17</a><br>
 Life: <a href="tel:+375173551213">+ 375 (25) 642-25-11</a><img class="alignnone size-medium wp-image-5493" src="//hairguys.by/wp-content/uploads/2018/03/viber-300x300.png" alt="viber" width="16" height="16"><br>
 Vel.: <a href="tel:+375296881213">+ 375 (29) 643-21-83</a> <br>
@@ -157,14 +154,35 @@ Vel.: <a href="tel:+375296881213">+ 375 (29) 643-21-83</a> <br>
 <img class="alignnone wp-image-2171" src="https://mamcupy.com/upload/medialibrary/6ea/6eaa85d0cde97edb9aa96b666c5839cb.png" alt="w512h5121384975213MezhdunarodnylogotipVK" width="32" height="32"></a>
 <a href="https://www.instagram.com/creative_studio_jh/" target="_blank" rel="noopener">
 <img class="alignnone wp-image-2172 size-full" src="http://sequoiamebel.ru/sequoia/img/instagram.png" width="32" height="32"></a>
+<br><br>2019  &copy;  MadLock
 </p>
 </div>
-</td>
-   </tr>
-  </table>
+<!-- 
+    <div class="CR">
+      <p>2019  &copy;  MadLock</p>
+    </div>
 
+    <div class="textwidget"> <h6>Свяжитель с нами</h6>
+            
+<p><a href="{{asset('map')}}"> г. Минск,ул. Короля, 17</a><br>
+Life: <a href="tel:+375173551213">+ 375 (25) 642-25-11</a><img class="alignnone size-medium wp-image-5493" src="//hairguys.by/wp-content/uploads/2018/03/viber-300x300.png" alt="viber" width="16" height="16"><br>
+Vel.: <a href="tel:+375296881213">+ 375 (29) 643-21-83</a> <br>
+
+    </div>     
+      
     
-  </footer>
+    <div class="menu-foot">
+      <a href="https://vk.com/creative_studio_jh" target="_blank" rel="noopener">
+<img class="alignnone wp-image-2171" src="https://mamcupy.com/upload/medialibrary/6ea/6eaa85d0cde97edb9aa96b666c5839cb.png" alt="w512h5121384975213MezhdunarodnylogotipVK" width="32" height="32"></a>
+<a href="https://www.instagram.com/creative_studio_jh/" target="_blank" rel="noopener">
+<img class="alignnone wp-image-2172 size-full" src="http://sequoiamebel.ru/sequoia/img/instagram.png" width="32" height="32"></a>
+    </div> -->
+    
+
    
+  </footer>
+
+  
+    
   
  </html>
